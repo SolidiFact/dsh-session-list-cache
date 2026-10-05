@@ -1,15 +1,38 @@
 {
-  "name": "dsh-session-list-cache",
+  "name": "@solidifact/dsh-session-list-cache",
   "version": "0.1.0",
   "description": "dsh web plugin: stop an open page from rebuilding every stored session's list row every 5 seconds",
   "type": "module",
   "main": "index.mjs",
   "exports": "./index.mjs",
-  "files": ["index.mjs", "README.md", "LICENSE"],
-  "scripts": { "test": "node --test" },
-  "keywords": ["dsh", "deepseek-harness", "dsh-plugin", "performance"],
+  "files": [
+    "index.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "performance"
+  ],
   "author": "SolidiFact",
   "license": "Apache-2.0",
-  "private": true,
-  "engines": { "node": ">=22" }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolidiFact/dsh-session-list-cache.git"
+  },
+  "homepage": "https://github.com/SolidiFact/dsh-session-list-cache#readme",
+  "bugs": {
+    "url": "https://github.com/SolidiFact/dsh-session-list-cache/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
