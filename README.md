@@ -54,22 +54,29 @@ which wraps the same projection cache.
 
 ## Install
 
-Tested with dsh 0.1.7-rc.2.
+Tested with dsh 0.1.7-rc.2. Use the profile you run; these examples use `web`.
 
-1. Copy `index.mjs` into your dsh web profile folder as `session-list-cache.mjs`
-   (for example `~/.dsh/profiles/web/session-list-cache.mjs`).
-2. Add it to that profile's `cordis.patch.yml`:
+```bash
+dsh plugin --profile web add @solidifact/dsh-session-list-cache
+```
 
-   ```yaml
-   - insert:
-       - id: session-list-cache
-         name: './session-list-cache.mjs'
-   ```
+Restart dsh web. Its log should show
+`[session-list-cache] unchanged cold sessions reuse their session-list row`.
 
-3. Restart dsh web. Its log should show
-   `[session-list-cache] unchanged cold sessions reuse their session-list row`.
+To remove it:
 
-To remove it, delete the insert and restart.
+```bash
+dsh plugin --profile web remove @solidifact/dsh-session-list-cache
+```
+
+**Without npm:** copy `index.mjs` into the profile folder as `session-list-cache.mjs`
+(for example `~/.dsh/profiles/web/`) and add it to that profile's `cordis.patch.yml`:
+
+```yaml
+- insert:
+    - id: session-list-cache
+      name: './session-list-cache.mjs'
+```
 
 ## Tuning
 

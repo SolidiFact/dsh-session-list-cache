@@ -1,0 +1,5 @@
+# Loaded when this package is installed as a dsh bundle:
+#   dsh plugin --profile web add @solidifact/dsh-session-list-cache
+- insert:
+    - id: session-list-cache
+      name: '@solidifact/dsh-session-list-cache'

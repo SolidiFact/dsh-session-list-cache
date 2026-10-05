@@ -1,12 +1,13 @@
 {
   "name": "@solidifact/dsh-session-list-cache",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "dsh web plugin: stop an open page from rebuilding every stored session's list row every 5 seconds",
   "type": "module",
   "main": "index.mjs",
   "exports": "./index.mjs",
   "files": [
     "index.mjs",
+    "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
@@ -34,5 +35,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   }
 }
