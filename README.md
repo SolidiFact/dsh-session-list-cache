@@ -1,5 +1,21 @@
 # dsh-session-list-cache
 
+> **Retired on 2026-10-05. Do not install it.** A controlled benchmark found no measurable gain.
+> A private dsh with a copy of 775 real stored sessions was polled like an open page (one
+> `session/list` every 5 seconds), and each phase started dsh fresh with the cache on, off, then on
+> again. Median CPU use of one core:
+>
+> | dsh | cache on | cache off | cache on again |
+> |---|---|---|---|
+> | 0.1.7-rc.2 | 6.1% | 6.3% | 7.3% |
+> | 0.2.0-rc.2 | 6.0% | 5.9% | 6.1% |
+> | 0.2.1-alpha.1 | 6.5% | 5.4% | 6.9% |
+>
+> The "15.2% to 8.1%" figure below came from the busy live dsh it was written on, with other work
+> and other plugins running; it did not reproduce in isolation, so it should not be relied on.
+> The text below is kept as it was published.
+
+
 A small [DeepSeek Harness (dsh)](https://www.npmjs.com/package/@deepseek-ai/dsh) web plugin
 that stops an open dsh web page from costing a steady slice of a CPU core.
 
